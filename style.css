@@ -101,7 +101,7 @@ p.card-description {
 .current-price {
   color: hsl(158, 36%, 37%);
   font-weight: 700;
-  font-size: 24px;
+  font-size: calc(1.2rem + 1vw);
 }
 
 .card a {
@@ -115,6 +115,7 @@ p.card-description {
   color: white;
   background-color: hsl(158, 36%, 37%);
   transition: 0.3s ease-in-out;
+  font-weight: bold;
 }
 
 .card a:hover {
