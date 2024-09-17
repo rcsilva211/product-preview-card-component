@@ -29,10 +29,8 @@ main {
 .card {
   display: flex;
   border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  width: clamp(20rem, 50vw, 40rem);
-  height: auto;
+  width: clamp(20rem, 50vw, 50rem);
+  height: clamp(20rem, 37vw, 30rem);
   overflow: hidden;
   background-color: hsl(0, 0%, 100%);
 }
@@ -47,26 +45,53 @@ main {
 
 .right-side {
   width: 50%;
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+p,
+a {
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
-  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 5px !important;
   font-weight: 400;
-  font-size: calc(0.5rem + 0.5vw);
+  font-size: 1rem;
   color: hsl(228, 12%, 48%);
 }
 
 h2,
-a {
+.current-price {
   font-family: 'Fraunces', serif;
 }
 
+h2 {
+  font-size: 35px;
+  line-height: 1;
+  margin: 20px 0 0 0;
+}
+
 p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: calc(0.1rem + 1vw);
+  font-size: 15px;
   color: hsl(228, 12%, 48%);
+  font-weight: 500;
+}
+
+p.card-description {
+  margin-top: auto;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  margin-bottom: 15px;
 }
 
 .original-price {
@@ -75,19 +100,86 @@ p {
 
 .current-price {
   color: hsl(158, 36%, 37%);
+  font-weight: 700;
+  font-size: 24px;
 }
 
-font {
-  font-family: 'Fraunces', serif;
+.card a {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  padding: 18px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: white;
+  background-color: hsl(158, 36%, 37%);
+  transition: 0.3s ease-in-out;
 }
-@media screen and (max-width: 376px) {
+
+.card a:hover {
+  background-color: #1a4031;
+}
+
+a img {
+  height: 18px;
+  width: auto;
+}
+
+@media screen and (max-width: 1025px) {
+  .current-price {
+    font-size: calc(2rem + 1vw);
+  }
+  .card {
+    width: clamp(20rem, 64vw, 50rem);
+    height: clamp(20rem, 48vw, 45rem);
+  }
+}
+
+@media screen and (max-width: 500px) {
   .mobile {
     display: block;
   }
   .desktop {
     display: none;
   }
+
+  h2 {
+    font-size: 30px;
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
   .card {
+    width: 90%;
+    height: 75%;
     flex-direction: column;
+  }
+  .left-side,
+  .right-side {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  .card {
+    height: 90%;
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  .right-side {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-height: 668px) {
+  .card {
+    height: 90%;
   }
 }
